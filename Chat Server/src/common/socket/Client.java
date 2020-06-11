@@ -28,6 +28,9 @@ public class Client {
 						byte[] buffer = new byte[512];
 						
 						int length = in.read(buffer);
+						
+						System.out.println("Client's length : " + length);
+						
 						if(length == -1) throw new IOException();
 						System.out.println("[메세지 수신 성공]"
 								+socket.getRemoteSocketAddress()
@@ -39,6 +42,9 @@ public class Client {
 					}
 					}
 				}catch(Exception e) {
+					
+					e.printStackTrace();
+					
 					try {
 						System.out.println("[메세지 수신 오류]"
 								+socket.getRemoteSocketAddress()

@@ -89,6 +89,9 @@ public class Main extends Application {
 	// UI를 생성하고 실질적으로 프로그램을 작동시키는 메소드
 	@Override
 	public void start(Stage primaryStage) {
+			
+			System.out.println("서버를 시작합니다.");
+		
 			BorderPane root = new BorderPane();
 			root.setPadding(new Insets(5));
 			
