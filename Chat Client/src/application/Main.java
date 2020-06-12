@@ -3,8 +3,9 @@ package application;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.Socket;
-
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -38,7 +39,6 @@ public class Main extends Application {
 						Platform.exit();
 					}
 				}
-
 			}
 
 		};
@@ -150,12 +150,10 @@ public class Main extends Application {
 			connectionButton.setOnAction(event->{
 				if(connectionButton.getText().equals("접속하기")) {
 					int port=9876;
-					try {
-						port=Integer.parseInt(portText.getText());
+
 						
-					}catch(Exception e) {
-						e.printStackTrace();
-					}
+						port=Integer.parseInt(portText.getText());
+					
 					startClient(IPText.getText(),port);
 					Platform.runLater(()->{
 						textArea.appendText("[ 채팅방 접속] \n");
@@ -190,8 +188,6 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			connectionButton.requestFocus();
-			
-
 	}
 
 	// 프로그램의 진입점.
